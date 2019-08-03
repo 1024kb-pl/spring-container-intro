@@ -1,11 +1,15 @@
 package pl.blog.spring.camel.camel.validation;
 
-import pl.blog.spring.camel.dao.GuardianDao;
-import pl.blog.spring.camel.model.Guardian;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import pl.blog.spring.camel.camel.dao.GuardianDao;
+import pl.blog.spring.camel.camel.model.Guardian;
 
+@Component
 public class GuardianValidator {
     private final GuardianDao guardianDao;
 
+    @Autowired
     public GuardianValidator(GuardianDao guardianDao) {
         this.guardianDao = guardianDao;
     }

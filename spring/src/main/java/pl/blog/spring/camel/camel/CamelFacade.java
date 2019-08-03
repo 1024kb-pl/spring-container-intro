@@ -1,15 +1,19 @@
 package pl.blog.spring.camel.camel;
 
-import pl.blog.spring.camel.model.Camel;
-import pl.blog.spring.camel.model.Gender;
-import pl.blog.spring.camel.model.Guardian;
-import pl.blog.spring.camel.service.CamelService;
-import pl.blog.spring.camel.service.GuardianService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import pl.blog.spring.camel.camel.model.Camel;
+import pl.blog.spring.camel.camel.model.Gender;
+import pl.blog.spring.camel.camel.model.Guardian;
+import pl.blog.spring.camel.camel.service.CamelService;
+import pl.blog.spring.camel.camel.service.GuardianService;
 
+@Component
 public class CamelFacade {
     private final CamelService camelService;
     private final GuardianService guardianService;
 
+    @Autowired
     public CamelFacade(CamelService camelService, GuardianService guardianService) {
         this.camelService = camelService;
         this.guardianService = guardianService;

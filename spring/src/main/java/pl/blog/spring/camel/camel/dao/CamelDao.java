@@ -1,11 +1,13 @@
 package pl.blog.spring.camel.camel.dao;
 
-import pl.blog.spring.camel.model.Camel;
+import org.springframework.stereotype.Component;
+import pl.blog.spring.camel.camel.model.Camel;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+@Component
 public class CamelDao {
     private static final Map<Long, Camel> camels = new HashMap<>();
     private static Long CAMEL_ID = 0L;
