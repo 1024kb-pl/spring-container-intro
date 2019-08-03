@@ -9,6 +9,9 @@ import pl.blog.spring.camel.camel.CamelFacade;
 import pl.blog.spring.camel.camel.model.Camel;
 import pl.blog.spring.camel.camel.model.Gender;
 import pl.blog.spring.camel.camel.model.Guardian;
+import pl.blog.spring.camel.camel.model.Inspector;
+
+import java.util.Collections;
 
 @SpringBootApplication
 public class CamelApplication implements CommandLineRunner {
@@ -27,7 +30,10 @@ public class CamelApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		CamelFacade camelFacade = applicationContext.getBean(CamelFacade.class);
 		Camel camel = camelFacade.createCamel(new Guardian("Jan", "jan@mail.com", "admin"), "Mela", 15, Gender.FEMALE);
-
+		Inspector inspector = camelFacade.createInspector(Collections.singletonList(camel), "Stasiu");
 		System.out.println(camel);
+		System.out.println(inspector);
+
+
 	}
 }
