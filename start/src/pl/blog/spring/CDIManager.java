@@ -30,4 +30,13 @@ public class CDIManager {
                 .map(name::cast)
                 .orElseThrow(() -> new IllegalArgumentException("Cannot find implementation for: " + name + " class."));
     }
+
+    public static <T> T getFreshInstance(Class<T> name) {
+        try {
+            Object o = name.newInstance();
+            return name.cast(o);
+        } catch (InstantiationException | IllegalAccessException e) {
+            throw new IllegalArgumentException(e.getMessage(), e);
+        }
+    }
 }

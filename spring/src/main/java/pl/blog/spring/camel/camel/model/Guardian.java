@@ -1,4 +1,4 @@
-package pl.blog.spring.camel.model;
+package pl.blog.spring.camel.camel.model;
 
 public class Guardian {
     private Long id;
